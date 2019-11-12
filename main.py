@@ -18,7 +18,7 @@ def main():
     tree.pass_growing_season()
     print(tree)
 
-  print("Check Check")
+  print("Check Check Check")
   print("Tree matured")
 
 
