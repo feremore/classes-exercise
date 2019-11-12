@@ -1,9 +1,12 @@
+from Orange import Orange
+import random
 class OrangeTree:
   # Trees should start at the age of 0. 
   # Trees should start at a height of 0.
   def __init__(self):
     self.age = 0
     self.height = 0
+    self.oranges = []
 
 
   # Each growing season.
@@ -17,8 +20,11 @@ class OrangeTree:
     self.height += 2.5
     if self.height > 25:
       self.height = 25
-
-
+    self.oranges=[]
+    if self.is_mature():
+      rand_orange = random.randrange(100,301)
+    for i in range(rand_orange):
+      self.oranges.append(Oranges())
   # Checks if a tree is old enough to bear fruit ( at least 6 years )
   def is_mature(self):
     return self.age >= 6
@@ -34,4 +40,4 @@ class OrangeTree:
     pass
 
   def __str__(self):
-    return 'OrangeTree age={0}, height={1}'.format(self.age, self.height)
+    return 'OrangeTree age={0}, height={1} num Oranges={2}'.format(self.age, self.height,self.oranges)
