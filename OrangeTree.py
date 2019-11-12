@@ -23,8 +23,8 @@ class OrangeTree:
     self.oranges=[]
     if self.is_mature():
       rand_orange = random.randrange(100,301)
-    for i in range(rand_orange):
-      self.oranges.append(Oranges())
+      for i in range(rand_orange):
+        self.oranges.append(Orange())
   # Checks if a tree is old enough to bear fruit ( at least 6 years )
   def is_mature(self):
     return self.age >= 6
@@ -32,12 +32,17 @@ class OrangeTree:
 
   # Add instance method: has_oranges() which returns whether or not a tree has any oranges on it.
   def has_oranges(self):
-    pass
+    return len(self.oranges)>0
 
   # Should pick an orange of a tree and return it.
   # Or throw an error if there are no oranges.
   def harvest_orange(self):
-    pass
+    if self.has_oranges:
+      random_orange =random.randrange(len(self.oranges))
+      orange =self.oranges.pop(random_orange)
+      return orange
+    else:
+      return None
 
   def __str__(self):
-    return 'OrangeTree age={0}, height={1} num Oranges={2}'.format(self.age, self.height,self.oranges)
+    return 'OrangeTree age={0}, height={1} num Oranges={2}'.format(self.age, self.height,len(self.oranges))
